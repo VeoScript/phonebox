@@ -12,12 +12,12 @@
         </div>
       </div>
       <div className="flex flex-col w-full mt-5 space-y-1">
-        <Link href="/">
+        <Link href="/home">
           <a className="rounded-lg w-full max-w-sm px-5 py-3 font-bold text-left text-base text-scheme-sky bg-scheme-dark transition ease-in-out duration-300 transform hover:scale-95">
             Home
           </a>
         </Link>
-        <Link href="/">
+        <Link href="/phonebook">
           <a className="rounded-lg w-full max-w-sm px-5 py-3 font-bold text-left text-base text-scheme-sky bg-scheme-dark transition ease-in-out duration-300 transform hover:scale-95">
             Phonebook
           </a>

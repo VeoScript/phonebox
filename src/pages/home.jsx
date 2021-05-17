@@ -13,8 +13,8 @@ export default function Home() {
           <div className="flex flex-col w-full max-w-sm h-auto border-r border-scheme-mid px-3 py-5">
             <Sidebar />
           </div>
-          <div className="flex flex-col w-full max-w-full h-auto px-3 py-5">
-            <div className="flex flex-row w-full">
+          <div className="flex flex-col w-full max-w-full h-auto">
+            <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-6">
               <span className="font-bold text-xl text-scheme-dark">Home</span>
             </div>
           </div>
