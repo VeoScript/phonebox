@@ -3,10 +3,29 @@ import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
 import ContactList from '~/components/contact-list'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { PrismaClient } from '@prisma/client'
 
-export default function Phonebook() {
+const prisma = new PrismaClient()
+
+export async function getServerSideProps(){
+  const contacts = await prisma.contact.findMany({
+    orderBy: [
+      {
+        id: 'desc'
+      }
+    ],
+  })
+  return {
+    props: {
+      data: contacts
+    }
+  }
+}
+
+export default function Phonebook({data}) {
   return (
     <>
       <Head>
@@ -23,7 +42,7 @@ export default function Phonebook() {
               <MyModal />
             </div>
             <div className="flex flex-col w-full overflow-y-auto">
-              <ContactList />
+              <ContactList contacts={data} />
             </div>
           </div>
         </div>
@@ -34,14 +53,21 @@ export default function Phonebook() {
 
 function MyModal() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting }} = useForm()
+  const router = useRouter()
 
-  const createContact = async (formData) => {
-    try{
-      console.log(formData)
-      reset()
-    } catch (err) {
-      console.error(err)
-    }
+  function refreshData() {
+    router.replace(router.asPath)
+  }
+
+  async function createContact(formData) {
+    const response = await fetch('/api/create-contact', {
+      method: 'POST',
+      body: JSON.stringify(formData)
+    })
+    reset()
+    refreshData()
+    closeModal()
+    return await response.json()
   }
 
   let [isOpen, setIsOpen] = useState(false)
