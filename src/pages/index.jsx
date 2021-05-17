@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Layout from '~/layouts/default'
 
 export default function Home() {
   return (
@@ -6,9 +7,11 @@ export default function Home() {
       <Head>
         <title>Phonebox</title>
       </Head>
-      <div>
-        <span>This is Phonebox</span>
-      </div>
+      <Layout>
+        <div className="flex flex-row justify-center w-full">
+          <span>This is Phonebox</span>
+        </div>
+      </Layout>
     </>
   )
 }
