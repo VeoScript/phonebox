@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
+import ContactList from '~/components/contact-list'
 import { useForm } from 'react-hook-form'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
@@ -20,6 +21,9 @@ export default function Phonebook() {
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">
               <span className="font-bold text-xl text-scheme-dark">Contact List</span>
               <MyModal />
+            </div>
+            <div className="flex flex-col w-full overflow-y-auto">
+              <ContactList />
             </div>
           </div>
         </div>
