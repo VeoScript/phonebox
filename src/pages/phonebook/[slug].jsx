@@ -39,7 +39,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                 <div className="absolute inset-0 top-24">
                   <div className="flex flex-col w-full pb-5 space-y-5">
                     <div class="flex flex-row items-center justify-center w-full h-auto">
-                      <img className="w-44 h-44 ring-4 ring-[#fff] rounded-full object-cover" src={ contact.avatar_url } alt="contact_avatar" />
+                      <img className="w-44 h-44 ring-4 ring-[#fff] rounded-full bg-scheme-dark object-cover" src={ contact.avatar_url } alt="contact_avatar" />
                     </div>
                     <div className="flex flex-col items-center w-full">
                       <span className="font-bold text-3xl">{ contact.name }</span>
