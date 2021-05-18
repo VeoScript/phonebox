@@ -5,7 +5,7 @@ export default function ContactList({contacts}) {
     <>
       {contacts.map(contact => {
         return (
-          <Link href="/home">
+          <Link href={`/phonebook/${contact.slug}`} key={contact.id}>
             <a className="flex flex-row items-center justify-between w-full border-b border-scheme-dark px-5 py-3 hover:opacity-80">
               <div className="flex flex-row items-center space-x-3">
                 <img className="w-16 h-16 rounded-full object-cover" src={contact.avatar_url} alt="avatar" />
