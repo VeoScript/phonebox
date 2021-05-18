@@ -11,6 +11,12 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 export async function getServerSideProps(){
+  const countAllContacts = await prisma.contact.count({
+    select: {
+      _all: true,
+      name: true
+    }
+  })
   const contacts = await prisma.contact.findMany({
     orderBy: [
       {
@@ -20,12 +26,13 @@ export async function getServerSideProps(){
   })
   return {
     props: {
-      data: contacts
+      data: contacts,
+      countAllContacts
     }
   }
 }
 
-export default function Phonebook({data}) {
+export default function Phonebook({data, countAllContacts}) {
   return (
     <>
       <Head>
@@ -34,7 +41,7 @@ export default function Phonebook({data}) {
       <Layout>
         <div className="flex flex-row justify-between w-full h-screen">
           <div className="flex flex-col w-full max-w-sm h-auto border-r border-scheme-mid px-3 py-5">
-            <Sidebar />
+            <Sidebar getCount={countAllContacts} />
           </div>
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">

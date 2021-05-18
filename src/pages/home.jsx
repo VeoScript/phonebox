@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
+import { PrismaClient } from '@prisma/client'
 
-export default function Home() {
+const prisma = new PrismaClient()
+
+export default function Home({countAllContacts}) {
   return (
     <>
       <Head>
@@ -11,7 +14,7 @@ export default function Home() {
       <Layout>
         <div className="flex flex-row justify-between w-full h-screen">
           <div className="flex flex-col w-full max-w-sm h-auto border-r border-scheme-mid px-3 py-5">
-            <Sidebar />
+            <Sidebar getCount={countAllContacts} />
           </div>
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-6">
@@ -22,4 +25,18 @@ export default function Home() {
       </Layout>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const countAllContacts = await prisma.contact.count({
+    select: {
+      _all: true,
+      name: true
+    }
+  })
+  return {
+    props: {
+      countAllContacts
+    }
+  }
 }

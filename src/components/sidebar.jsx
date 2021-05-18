@@ -1,6 +1,6 @@
- import Link from 'next/link'
+import Link from 'next/link'
 
- export default function Sidebar() {
+ export default function Sidebar({getCount}) {
    return (
     <>
       <div className="flex flex-col w-full">
@@ -30,7 +30,7 @@
             <div className="font-light text-xs text-scheme-sky">How many contacts that you have?</div>
           </div>
           <div className="font-bold text-5xl rounded-lg text-scheme-dark bg-scheme-sky px-5 py-5">
-            0
+            {getCount.name}
           </div>
         </div>
       </div>
