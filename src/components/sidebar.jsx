@@ -27,11 +27,11 @@ import Link from 'next/link'
         <div className="flex flex-row items-center justify-between w-full rounded-lg px-5 py-3 bg-scheme-dark">
           <div className="flex flex-col">
             <div className="font-bold text-base text-scheme-sky">Contacts</div>
-            <div className="font-light text-xs text-scheme-sky">How many contacts that you have?</div>
+            <div className="font-light text-xs text-scheme-sky">How many contacts do you have?</div>
           </div>
           <div className="font-bold text-5xl rounded-lg text-scheme-dark bg-scheme-sky px-5 py-3">
             {getCount.name}
-          </div>
+          </div>  
         </div>
       </div>
     </>
