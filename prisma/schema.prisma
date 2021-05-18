@@ -15,6 +15,16 @@ model Contact {
   name String?
   description String?
   phone String @unique
+  email String @unique
+  address String?
+  birthday String?
+  anniversary String?
+  relationship String?
   avatar_url String?
   slug String?
+  facebook String?
+  twitter String?
+  instagram String?
+  tiktok String?
+  youtube String?
 }
