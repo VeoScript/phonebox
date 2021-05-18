@@ -177,12 +177,12 @@ function MyModal() {
                     </div>
                     <div className="flex flex-col w-full space-y-2">
                       <div className="form-control">
-                        <input type="text" name="birthday" {...register("birthday")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Birthdate" disabled={ isSubmitting } />
-                        {/* { errors.birthday && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Birthdate is required!</span> } */}
+                        <input type="text" name="birthday" {...register("birthday", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Birthdate" disabled={ isSubmitting } />
+                        { errors.birthday && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Birthdate is required!</span> }
                       </div>
                       <div className="form-control">
-                        <input type="text" name="anniversary" {...register("anniversary")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Friend Anniversary" disabled={ isSubmitting } />
-                        {/* { errors.anniversary && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Anniversary is required!</span> } */}
+                        <input type="text" name="anniversary" {...register("anniversary", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Friend Anniversary" disabled={ isSubmitting } />
+                        { errors.anniversary && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Anniversary is required!</span> }
                       </div>
                       <div className="form-control">
                         <input type="text" name="relationship" {...register("relationship", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Relationship" disabled={ isSubmitting } />

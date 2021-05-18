@@ -47,47 +47,53 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
               <div className="relative">
                 <div className="absolute inset-0 top-24">
                   <div className="flex flex-col w-full pb-5 space-y-5">
-                    <div class="flex flex-row items-center justify-center w-full h-auto">
+                    <div className="flex flex-row items-center justify-center w-full h-auto">
                       <img className="w-44 h-44 ring-4 ring-[#fff] rounded-full bg-scheme-dark object-cover" src={ contact.avatar_url } alt="contact_avatar" />
                     </div>
                     <div className="flex flex-col items-center w-full">
                       <span className="font-bold text-3xl">{ contact.name }</span>
-                      <span className="font-light text-base">{ contact.description }</span>
+                      <span className="font-light text-lg">{ contact.relationship }</span>
                       <div className="flex flex-col w-full mt-5 px-5 text-scheme-sky space-y-10">
                         <div className="flex flex-row justify-center w-full space-x-3">
                           <Link href={ contact.facebook }>
-                            <a target="_blank">
+                            <a className={!contact.facebook ? 'hidden' : 'block'} target="_blank">
                               <FacebookIcon />
                             </a>
                           </Link>
                           <Link href={ contact.twitter }>
-                            <a target="_blank">
+                            <a className={!contact.twitter ? 'hidden' : 'block'} target="_blank">
                               <TwitterIcon />
                             </a>
                           </Link>
                           <Link href={ contact.instagram }>
-                            <a target="_blank">
+                            <a className={!contact.instagram ? 'hidden' : 'block'} target="_blank">
                               <InstagramIcon />
                             </a>
                           </Link>
                           <Link href={ contact.tiktok }>
-                            <a target="_blank">
+                            <a className={!contact.tiktok ? 'hidden' : 'block'} target="_blank">
                               <TiktokIcon />
                             </a>
                           </Link>
                           <Link href={ contact.youtube }>
-                            <a target="_blank">
+                            <a className={!contact.tiktok ? 'hidden' : 'block'} target="_blank">
                               <YoutubeIcon />
                             </a>
                           </Link>
                         </div>
                         <div className="flex flex-row w-full space-x-2">
                           <div className="flex flex-col w-full max-w-sm space-y-2">
-                            <div className="flex w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark">
+                            <div className="flex flex-col w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark space-y-2">
                               <span className="font-bold text-xl">Intro</span>
-                            </div>
-                            <div className="flex w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark">
                               <span className="font-normal text-base">{ contact.description }</span>
+                            </div>
+                            <div className="flex flex-col w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark">
+                              <span className="font-bold text-lg">{ contact.phone }</span>
+                              <span className="font-normal text-sm">Phone</span>
+                            </div>
+                            <div className={`${contact.email ? 'flex flex-col w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark ' : 'hidden'}`}>
+                              <span className="font-bold text-lg">{ contact.email }</span>
+                              <span className="font-normal text-sm">Email</span>
                             </div>
                           </div>
                           <div className="flex flex-col w-full max-w-full space-y-2">
@@ -95,7 +101,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                               <span className="font-bold text-xl">Basic Information</span>
                             </div>
                             <div className="flex flex-col w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark">
-                              <div className="flex flex-col border-b border-scheme-dark py-3 w-full">
+                              <div className={`${contact.address ? 'flex flex-col border-b border-scheme-dark py-3 w-full' : 'hidden'}`}>
                                 <span className="font-bold text-lg">{ contact.address }</span>
                                 <span className="font-normal text-sm">Home Address</span>
                               </div>
