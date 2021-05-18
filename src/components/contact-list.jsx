@@ -11,7 +11,7 @@ export default function ContactList({contacts}) {
                 <img className="w-16 h-16 rounded-full object-cover" src={contact.avatar_url} alt="avatar" />
                 <div className="flex flex-col">
                   <span className="font-bold text-lg text-scheme-dark">{contact.name}</span>
-                  <span className="font-light text-sm text-scheme-dark">{contact.description}</span>
+                  <span className="font-light text-sm text-scheme-dark">{contact.relationship}</span>
                 </div>
               </div>
               <span className="font-semibold text-xl text-scheme-dark">{contact.phone}</span>
