@@ -55,28 +55,28 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                       <span className="font-light text-base">{ contact.description }</span>
                       <div className="flex flex-col w-full mt-5 px-5 text-scheme-sky space-y-10">
                         <div className="flex flex-row justify-center w-full space-x-3">
-                          <Link href="/">
-                            <a>
+                          <Link href={ contact.facebook }>
+                            <a target="_blank">
                               <FacebookIcon />
                             </a>
                           </Link>
-                          <Link href="/">
-                            <a>
+                          <Link href={ contact.twitter }>
+                            <a target="_blank">
                               <TwitterIcon />
                             </a>
                           </Link>
-                          <Link href="/">
-                            <a>
+                          <Link href={ contact.instagram }>
+                            <a target="_blank">
                               <InstagramIcon />
                             </a>
                           </Link>
-                          <Link href="/">
-                            <a>
+                          <Link href={ contact.tiktok }>
+                            <a target="_blank">
                               <TiktokIcon />
                             </a>
                           </Link>
-                          <Link href="/">
-                            <a>
+                          <Link href={ contact.youtube }>
+                            <a target="_blank">
                               <YoutubeIcon />
                             </a>
                           </Link>
@@ -87,9 +87,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                               <span className="font-bold text-xl">Intro</span>
                             </div>
                             <div className="flex w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark">
-                              <span className="font-normal text-base">
-                                You’re braver than you believe, and stronger than you seem, and smarter than you think.
-                              </span>
+                              <span className="font-normal text-base">{ contact.description }</span>
                             </div>
                           </div>
                           <div className="flex flex-col w-full max-w-full space-y-2">
@@ -98,15 +96,15 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                             </div>
                             <div className="flex flex-col w-full px-5 py-3 rounded-lg bg-scheme-light text-scheme-dark">
                               <div className="flex flex-col border-b border-scheme-dark py-3 w-full">
-                                <span className="font-bold text-lg">Home Address</span>
+                                <span className="font-bold text-lg">{ contact.address }</span>
                                 <span className="font-normal text-sm">Home Address</span>
                               </div>
                               <div className="flex flex-col border-b border-scheme-dark py-3 w-full">
-                                <span className="font-bold text-lg">Birthday</span>
+                                <span className="font-bold text-lg">{ contact.birthday }</span>
                                 <span className="font-normal text-sm">Birthday</span>
                               </div>
                               <div className="flex flex-col border-b border-scheme-dark py-3 w-full">
-                                <span className="font-bold text-lg">Anniversary</span>
+                                <span className="font-bold text-lg">{ contact.address }</span>
                                 <span className="font-normal text-sm">Anniversary</span>
                               </div>
                             </div>
