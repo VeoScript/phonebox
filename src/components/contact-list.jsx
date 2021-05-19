@@ -10,11 +10,11 @@ export default function ContactList({contacts}) {
               <div className="flex flex-row items-center space-x-3">
                 <img className="w-16 h-16 rounded-full object-cover" src={contact.avatar_url} alt="avatar" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-lg text-scheme-dark">{contact.name}</span>
-                  <span className="font-light text-sm text-scheme-dark">{contact.relationship}</span>
+                  <span className="font-bold text-xl text-scheme-dark">{contact.name}</span>
+                  <span className="font-light text-base text-scheme-dark">{contact.relationship}</span>
                 </div>
               </div>
-              <span className="font-semibold text-xl text-scheme-dark">{contact.phone}</span>
+              <span className="font-semibold text-base text-scheme-dark">{contact.phone}</span>
             </a>
           </Link>
         )
