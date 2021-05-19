@@ -76,7 +76,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                             </a>
                           </Link>
                           <Link href={ contact.youtube }>
-                            <a className={!contact.tiktok ? 'hidden' : 'block'} target="_blank">
+                            <a className={!contact.youtube ? 'hidden' : 'block'} target="_blank">
                               <YoutubeIcon />
                             </a>
                           </Link>
@@ -105,12 +105,12 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                                 <span className="font-bold text-lg">{ contact.address }</span>
                                 <span className="font-normal text-sm">Home Address</span>
                               </div>
-                              <div className="flex flex-col border-b border-scheme-dark py-3 w-full">
+                              <div className={`${contact.birthday ? 'flex flex-col border-b border-scheme-dark py-3 w-full' : 'hidden'}`}>
                                 <span className="font-bold text-lg">{ contact.birthday }</span>
                                 <span className="font-normal text-sm">Birthday</span>
                               </div>
-                              <div className="flex flex-col border-b border-scheme-dark py-3 w-full">
-                                <span className="font-bold text-lg">{ contact.address }</span>
+                              <div className={`${contact.anniversary ? 'flex flex-col border-b border-scheme-dark py-3 w-full' : 'hidden'}`}>
+                                <span className="font-bold text-lg">{ contact.anniversary }</span>
                                 <span className="font-normal text-sm">Anniversary</span>
                               </div>
                             </div>

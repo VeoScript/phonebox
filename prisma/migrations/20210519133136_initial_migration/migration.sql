@@ -20,6 +20,3 @@ CREATE TABLE "Contact" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Contact.phone_unique" ON "Contact"("phone");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Contact.email_unique" ON "Contact"("email");

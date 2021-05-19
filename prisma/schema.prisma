@@ -15,7 +15,7 @@ model Contact {
   name String?
   description String?
   phone String @unique
-  email String @unique
+  email String
   address String?
   birthday String?
   anniversary String?
