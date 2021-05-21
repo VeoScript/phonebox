@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
+import UpdateContactModal from '~/components/update-contact-modal'
 import { useRouter } from 'next/router'
 import { PrismaClient } from '@prisma/client'
 
@@ -30,12 +31,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                 <span className="font-bold text-xl text-scheme-dark">{ contact.name }</span>
               </div>
               <div className="flex flex-row items-center">
-                <button
-                  type="button"
-                  className="px-4 py-2 text-sm font-medium text-white bg-scheme-dark rounded-md hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-                >
-                  Edit Profile
-                </button>
+                <UpdateContactModal getcontact={contact} />
               </div>
             </div>
             <div className="flex flex-col w-full h-full overflow-y-auto">
