@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
-import UpdateContactModal from '~/components/update-contact-modal'
+import UpdateContactModal from '~/components/modal-update-contact'
 import { useRouter } from 'next/router'
 import { PrismaClient } from '@prisma/client'
 
