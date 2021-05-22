@@ -4,7 +4,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
 export default function DeleteContact({ getcontact }) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting }} = useForm()
+  const { handleSubmit, reset } = useForm()
   const router = useRouter()
 
   function refreshData() {
