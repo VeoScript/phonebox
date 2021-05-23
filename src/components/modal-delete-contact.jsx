@@ -89,7 +89,7 @@ export default function DeleteContact({ getcontact }) {
                 </div>
                 <div  className="flex flex-col w-full mt-5 space-y-5">
                   <div className="flex flex-col w-full space-y-1">
-                    <span className="font-normal text-base">Are you sure you want to delete <span className="font-bold">{ getcontact.name }?</span></span>
+                    <span className="font-normal text-base">Are you sure you want to delete <span className="font-bold">{ getcontact.name }</span>?</span>
                   </div>
                   <div className="flex flex-row justify-center w-full space-x-2">
                     <button type="button" onClick={handleSubmit(deleteContact)} className="w-full max-w-[10rem] bg-red-600 text-white text-base text-center px-5 py-3 rounded-lg hover:bg-opacity-90 focus:outline-none">
