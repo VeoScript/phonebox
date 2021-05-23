@@ -138,8 +138,8 @@ export default function MyModal() {
                         { errors.avatar_url && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Avatar URL is required!</span> }
                       </div>
                       <div className="form-control w-full">
-                        <input type="text" name="slug" {...register("slug", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Slug" disabled={ isSubmitting } />
-                        { errors.slug && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Slug is required!</span> }
+                        <input type="text" name="slug" {...register("slug", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Create Username" disabled={ isSubmitting } />
+                        { errors.slug && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Username is required!</span> }
                       </div>
                     </div>
                   </div>
