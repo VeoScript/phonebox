@@ -17,7 +17,7 @@ export async function getServerSideProps(){
   const contacts = await prisma.contact.findMany({
     orderBy: [
       {
-        id: 'desc'
+        name: 'asc'
       }
     ],
   })
