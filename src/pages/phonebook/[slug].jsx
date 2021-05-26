@@ -109,7 +109,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
                               </div>
                               <div className={`${contact.anniversary ? 'flex flex-col border-b border-scheme-mid py-3 w-full' : 'hidden'}`}>
                                 <span className="font-bold text-lg">{ contact.anniversary }</span>
-                                <span className="font-normal text-sm text-scheme-sky">Anniversary</span>
+                                <span className="font-normal text-sm text-scheme-sky">Friendship Anniversary</span>
                               </div>
                             </div>
                           </div>
