@@ -15,10 +15,11 @@ export default function SearchFunction({contacts}) {
     }
   }
 
-  const getContact = contacts.map(({name, slug}) => {
+  const getContact = contacts.map(({name, slug, avatar_url}) => {
     return [
       name,
-      slug
+      slug,
+      avatar_url
     ]
   })
 
@@ -27,9 +28,9 @@ export default function SearchFunction({contacts}) {
   )
   
   return (
-    <div className="flex flex-col w-full max-w-sm">
+    <div className="flex flex-col w-full max-w-lg">
       <input
-        className="w-full max-w-sm px-3 py-2 bg-scheme-pale text-[#333] text-sm rounded-md focus:outline-none"
+        className="w-full px-3 py-2 bg-scheme-pale text-[#333] text-sm rounded-md focus:outline-none"
         type="text"
         name="search"
         value={searchTerm}
@@ -37,15 +38,17 @@ export default function SearchFunction({contacts}) {
         placeholder="Search" />
 
       <div className={`w-full h-full ${isOpen ? 'relative' : 'hidden'}`}>
-        <div className="absolute w-full h-auto max-h-80 overflow-y-auto mt-2 rounded-md bg-scheme-dark bg-opacity-75 text-white z-50">
+        <div className="absolute w-full h-auto max-h-80 overflow-y-auto mt-2 rounded-md bg-scheme-mid bg-opacity-80 text-white z-50">
           <div className="flex flex-row w-full bg-opacity-75">
-            <ul className="flex flex-col w-full max-w-sm">
+            <ul className="flex flex-col w-full">
               {results.map(contact => {
-                console.log(contact)
                 return (
-                  <li className="flex flex-row items-center w-full border-b border-scheme-light">
+                  <li className="flex flex-row items-center w-full border-b border-scheme-sky">
                     <Link href={`/phonebook/${contact[1]}`}>
-                      <a className="text-lg w-full px-3 py-2 hover:bg-scheme-mid">{contact[0]}</a>
+                      <a className="flex flex-row items-center w-full px-3 py-2 transition ease-in-out duration-200 hover:bg-scheme-dark space-x-3">
+                        <img className="w-10 h-10 rounded-full object-cover" src={`${contact[2]}`} alt="avatar"/>
+                        <span className="font-normal text-lg text-scheme-pale">{contact[0]}</span>
+                      </a>
                     </Link>
                   </li>
                 )
