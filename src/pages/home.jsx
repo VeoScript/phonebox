@@ -20,6 +20,9 @@ export default function Home({countAllContacts}) {
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-6">
               <span className="font-bold text-xl text-scheme-dark">Home</span>
             </div>
+            <div className="flex flex-row items-center justify-center w-full h-full text-[#333]">
+              <span>This is Homepage</span>
+            </div>
           </div>
         </div>
       </Layout>
