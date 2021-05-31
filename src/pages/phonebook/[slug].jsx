@@ -39,7 +39,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
             <div className="flex flex-col w-full h-full overflow-y-auto">
               <div className="relative">
                 <div className="absolute w-full">
-                  <img className="w-full h-48 bg-scheme-dark object-cover" src="https://c0.wallpaperflare.com/preview/546/793/162/aesthetics-grunge-vintage-retro.jpg" alt="coverphoto" />
+                  <img className="w-full h-48 bg-scheme-dark object-cover" src="https://wallpaperaccess.com/full/801652.jpg" alt="coverphoto" />
                 </div>
               </div>
               <div className="relative">
