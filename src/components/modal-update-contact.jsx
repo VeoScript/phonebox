@@ -126,68 +126,68 @@ export default function MyModal({ getcontact }) {
                   <div className="flex flex-row w-full space-x-2">
                     <div className="flex flex-col w-full space-y-2">
                       <div className="form-control">
-                        <input type="text" setValue={"name"}  name="name" {...register("name", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Name" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"name"}  name="name" {...register("name", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Name" disabled={ isSubmitting } />
                         { errors.name && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Name is required!</span> }
                       </div>
                       <div className="form-control">
-                        <input type="text" setValue={"description"} name="description" {...register("description", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Description" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"description"} name="description" {...register("description", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Description" disabled={ isSubmitting } />
                         { errors.description && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Description is required!</span> }
                       </div>
                       <div className="form-control">
-                        <input type="text" setValue={"phone"} name="phone" {...register("phone", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Phone" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"phone"} name="phone" {...register("phone", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Phone" disabled={ isSubmitting } />
                         { errors.phone && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Phone is required!</span> }
                       </div>
                       <div className="form-control">
-                        <input type="text" setValue={"email"} name="email" {...register("email")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Email" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"email"} name="email" {...register("email")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Email" disabled={ isSubmitting } />
                         {/* { errors.email && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Email is required!</span> } */}
                       </div>
                       <div className="form-control">
-                        <input type="text" setValue={"address"} name="address" {...register("address")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Home Address" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"address"} name="address" {...register("address")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Home Address" disabled={ isSubmitting } />
                         {/* { errors.address && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Home Address is required!</span> } */}
                       </div>
                     </div>
                     <div className="flex flex-col w-full space-y-2">
                       <div className="form-control">
-                        <input type="text" setValue={"birthday"} name="birthday" {...register("birthday", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Birthdate" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"birthday"} name="birthday" {...register("birthday", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Birthdate" disabled={ isSubmitting } />
                         { errors.birthday && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Birthdate is required!</span> }
                       </div>
                       <div className="form-control">
-                        <input type="text" setValue={"anniversary"} name="anniversary" {...register("anniversary", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Friend Anniversary" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"anniversary"} name="anniversary" {...register("anniversary", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Friend Anniversary" disabled={ isSubmitting } />
                         { errors.anniversary && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Anniversary is required!</span> }
                       </div>
                       <div className="form-control">
-                        <input type="text" setValue={"relationship"} name="relationship" {...register("relationship", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Relationship" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"relationship"} name="relationship" {...register("relationship", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Relationship" disabled={ isSubmitting } />
                         { errors.relationship && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Relationship is required!</span> }
                       </div>
                       <div className="form-control w-full">
-                        <input type="text" setValue={"avatar_url"} name="avatar_url" {...register("avatar_url", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Avatar URL" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"avatar_url"} name="avatar_url" {...register("avatar_url", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Avatar URL" disabled={ isSubmitting } />
                         { errors.avatar_url && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Avatar URL is required!</span> }
                       </div>
                       <div className="form-control w-full">
-                        <input type="text" setValue={"slug"} name="slug" {...register("slug", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Username" disabled={ isSubmitting } />
+                        <input type="text" setvalue={"slug"} name="slug" {...register("slug", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Username" disabled={ isSubmitting } />
                         { errors.slug && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Username is required!</span> }
                       </div>
                     </div>
                   </div>
                   <div className="flex flex-col w-full space-y-2">
                     <div className="form-control">
-                      <input type="text" setValue={"facebook"} name="facebook" {...register("facebook")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Facebook" disabled={ isSubmitting } />
+                      <input type="text" setvalue={"facebook"} name="facebook" {...register("facebook")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Facebook" disabled={ isSubmitting } />
                       {/* { errors.facebook && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Facebook is required!</span> } */}
                     </div>
                     <div className="form-control">
-                      <input type="text" setValue={"twitter"} name="twitter" {...register("twitter")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Twitter" disabled={ isSubmitting } />
+                      <input type="text" setvalue={"twitter"} name="twitter" {...register("twitter")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Twitter" disabled={ isSubmitting } />
                       {/* { errors.twitter && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Twitter is required!</span> } */}
                     </div>
                     <div className="form-control">
-                      <input type="text" setValue={"instagram"} name="instagram" {...register("instagram")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Instagram" disabled={ isSubmitting } />
+                      <input type="text" setvalue={"instagram"} name="instagram" {...register("instagram")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Instagram" disabled={ isSubmitting } />
                       {/* { errors.instagram && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Instagram is required!</span> } */}
                     </div>
                     <div className="form-control">
-                      <input type="text" setValue={"tiktok"} name="tiktok" {...register("tiktok")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Tiktok" disabled={ isSubmitting } />
+                      <input type="text" setvalue={"tiktok"} name="tiktok" {...register("tiktok")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Tiktok" disabled={ isSubmitting } />
                       {/* { errors.tiktok && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Tiktok is required!</span> } */}
                     </div>
                     <div className="form-control">
-                      <input type="text" setValue={"youtube"} name="youtube" {...register("youtube")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Youtube" disabled={ isSubmitting } />
+                      <input type="text" setvalue={"youtube"} name="youtube" {...register("youtube")} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Youtube" disabled={ isSubmitting } />
                       {/* { errors.youtube && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Youtube is required!</span> } */}
                     </div>
                   </div>
