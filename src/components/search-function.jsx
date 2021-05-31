@@ -15,11 +15,12 @@ export default function SearchFunction({contacts}) {
     }
   }
 
-  const getContact = contacts.map(({name, slug, avatar_url}) => {
+  const getContact = contacts.map(({name, slug, avatar_url, id}) => {
     return [
       name,
       slug,
-      avatar_url
+      avatar_url,
+      id
     ]
   })
 
@@ -43,7 +44,7 @@ export default function SearchFunction({contacts}) {
             <ul className="flex flex-col w-full">
               {results.map(contact => {
                 return (
-                  <li className="flex flex-row items-center w-full border-b border-scheme-sky">
+                  <li className="flex flex-row items-center w-full border-b border-scheme-sky" key={contact[3]}>
                     <Link href={`/phonebook/${contact[1]}`}>
                       <a className="flex flex-row items-center w-full px-3 py-2 transition ease-in-out duration-200 hover:bg-scheme-dark space-x-3">
                         <img className="w-10 h-10 rounded-full object-cover" src={`${contact[2]}`} alt="avatar"/>
