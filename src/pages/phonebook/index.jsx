@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
 import ContactList from '~/components/contact-list'
-import CreateContactModal from '~/components/modals/modal-create-contact'
+import CreateContactModal from '~/components/contact-modals/modal-create-contact'
 import SearchFunction from '~/components/search-function'
 import { PrismaClient } from '@prisma/client'
 
