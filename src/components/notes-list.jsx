@@ -19,6 +19,7 @@ export default function Notelist({ notes }) {
                   <div className="absolute w-full inset-0 top-44 mt-5 z-10">
                     <div className="flex flex-col w-full space-y-2 px-3">
                       <span className="font-bold text-xl">{ note.title }</span>
+                      <span className="font-light text-sm">{ note.date }</span>
                       <span className="font-normal text-sm line-clamp-3">{ note.note }</span>
                       <div className="w-full max-w-xs pt-5">
                         <span className="font-normal text-xs bg-scheme-sky text-scheme-mid px-2 py-1 rounded-full">{ note.tag }</span>
