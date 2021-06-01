@@ -38,7 +38,7 @@ export default function SearchNotes({notes}) {
         placeholder="Search" />
 
       <div className={`w-full h-full ${isOpen ? 'relative' : 'hidden'}`}>
-        <div className="absolute w-full h-auto max-h-80 overflow-y-auto mt-2 rounded-md bg-scheme-mid bg-opacity-80 text-white z-10">
+        <div className="absolute w-full h-auto max-h-80 overflow-y-auto mt-2 rounded-md bg-scheme-mid bg-opacity-95 text-white z-10">
           <div className="flex flex-row w-full bg-opacity-75">
             <ul className="flex flex-col w-full">
               {results.map(note => {
