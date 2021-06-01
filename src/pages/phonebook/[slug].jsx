@@ -9,7 +9,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export default function PhoneBookSlug({ contact, countAllContacts }) {
+export default function PhoneBookSlug({ contact, countAllNotes, countAllContacts }) {
   const router = useRouter()
   return (
     <>
@@ -19,7 +19,7 @@ export default function PhoneBookSlug({ contact, countAllContacts }) {
       <Layout>
         <div className="flex flex-row justify-between w-full h-screen text-scheme-dark">
           <div className="flex flex-col w-full max-w-sm h-auto border-r border-scheme-mid px-3 py-5">
-            <Sidebar getCount={countAllContacts} />
+            <Sidebar getCount={countAllContacts} countNotes={countAllNotes} />
           </div>
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">
@@ -134,6 +134,12 @@ export async function getServerSideProps(context) {
       slug: slug
     }
   })
+  const countAllNotes = await prisma.notes.count({
+    select: {
+      _all: true,
+      id: true
+    }
+  })
   const countAllContacts = await prisma.contact.count({
     select: {
       _all: true,
@@ -143,6 +149,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       contact,
+      countAllNotes,
       countAllContacts
     }
   }
