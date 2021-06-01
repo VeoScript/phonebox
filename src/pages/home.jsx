@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export default function Home({countAllContacts}) {
+export default function Home({ countAllNotes, countAllContacts }) {
   return (
     <>
       <Head>
@@ -14,7 +14,7 @@ export default function Home({countAllContacts}) {
       <Layout>
         <div className="flex flex-row justify-between w-full h-screen">
           <div className="flex flex-col w-full max-w-sm h-auto border-r border-scheme-mid px-3 py-5">
-            <Sidebar getCount={countAllContacts} />
+            <Sidebar getCount={countAllContacts} countNotes={countAllNotes} />
           </div>
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-6">
@@ -37,9 +37,16 @@ export async function getServerSideProps() {
       name: true
     }
   })
+  const countAllNotes = await prisma.notes.count({
+    select: {
+      _all: true,
+      id: true
+    }
+  })
   return {
     props: {
-      countAllContacts
+      countAllContacts,
+      countAllNotes
     }
   }
 }
