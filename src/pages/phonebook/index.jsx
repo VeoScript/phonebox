@@ -41,7 +41,7 @@ export default function Phonebook({data, countAllNotes, countAllContacts}) {
   return (
     <>
       <Head>
-        <title>Phonebook (Contact List)</title>
+        <title>Phonebox (Phonebook)</title>
       </Head>
       <Layout>
         <div className="flex flex-row justify-between w-full h-screen">
