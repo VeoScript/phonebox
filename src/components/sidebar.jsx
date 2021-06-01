@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
- export default function Sidebar({getCount}) {
+ export default function Sidebar({ getCount, countNotes }) {
    return (
     <>
       <div className="flex flex-col w-full">
@@ -44,8 +44,7 @@ import Link from 'next/link'
             <div className="font-light text-xs text-scheme-sky">How many notes do you have?</div>
           </div>
           <div className="font-bold text-5xl rounded-lg text-scheme-dark bg-scheme-sky px-5 py-3">
-            {/* getCountNotes */}
-            0
+            {countNotes.id}
           </div>  
         </div>
       </div>
