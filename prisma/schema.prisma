@@ -28,3 +28,12 @@ model Contact {
   tiktok String?
   youtube String?
 }
+
+model Notes {
+  id Int @id @default(autoincrement())
+  image String?
+  title String?
+  slug String?
+  note String?
+  tag String?
+}
