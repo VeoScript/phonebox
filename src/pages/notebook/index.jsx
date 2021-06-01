@@ -36,7 +36,7 @@ export async function getServerSideProps(){
   }
 }
 
-export default function Phonebook({ getNotes, countAllNotes, countAllContacts }) {
+export default function Notebook({ getNotes, countAllNotes, countAllContacts }) {
   return (
     <>
       <Head>
