@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Moment from 'react-moment'
 
 export default function Notelist({ notes }) {
   return (
@@ -20,7 +21,7 @@ export default function Notelist({ notes }) {
                     <div className="flex flex-col w-full space-y-2 px-3">
                       <div className="flex flex-col w-full">
                         <span className="font-bold text-xl">{ note.title }</span>
-                        <span className="font-light text-sm">{ note.date }</span>
+                        <span className="font-light text-sm"><Moment date={ note.date } format='LLLL' /></span>
                       </div>
                       <span className="font-normal text-sm line-clamp-3">{ note.note }</span>
                       <div className="w-full max-w-xs pt-5">
