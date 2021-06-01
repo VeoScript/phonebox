@@ -15,6 +15,12 @@ export async function getServerSideProps(){
       name: true
     }
   })
+  const countAllNotes = await prisma.notes.count({
+    select: {
+      _all: true,
+      id: true
+    }
+  })
   const contacts = await prisma.contact.findMany({
     orderBy: [
       {
@@ -25,12 +31,13 @@ export async function getServerSideProps(){
   return {
     props: {
       data: contacts,
+      countAllNotes,
       countAllContacts
     }
   }
 }
 
-export default function Phonebook({data, countAllContacts}) {
+export default function Phonebook({data, countAllNotes, countAllContacts}) {
   return (
     <>
       <Head>
@@ -39,7 +46,7 @@ export default function Phonebook({data, countAllContacts}) {
       <Layout>
         <div className="flex flex-row justify-between w-full h-screen">
           <div className="flex flex-col w-full max-w-sm h-auto border-r border-scheme-mid px-3 py-5">
-            <Sidebar getCount={countAllContacts} />
+            <Sidebar getCount={countAllContacts} countNotes={countAllNotes} />
           </div>
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">
