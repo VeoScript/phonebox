@@ -44,7 +44,7 @@ export default function NotebookSlug({ note, countAllNotes, countAllContacts }) 
               </div>
               <div className="relative">
                 <div className="absolute w-full inset-0 top-[17rem] z-10">
-                  <div className="card flex flex-col w-full max-w-sm px-5 py-3 ml-10 rounded-xl bg-opacity-95 bg-scheme-dark text-scheme-pale">
+                  <div className="card flex flex-col w-full max-w-md px-5 py-3 ml-10 rounded-xl bg-opacity-95 bg-[#222] text-scheme-pale">
                     <span className="font-bold text-2xl">{ note.title }</span>
                     <div className="flex flex-col w-full space-y-1">
                       <span className="font-normal text-base">{ note.tag }</span>
@@ -54,9 +54,9 @@ export default function NotebookSlug({ note, countAllNotes, countAllContacts }) 
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute w-full inset-0 top-[25rem] px-10 z-10">
+                <div className="absolute w-full inset-0 top-[21rem] px-5">
                   <div className="flex flex-col w-full">
-                    <div className="flex flex-col w-full px-10 py-5 mb-10 rounded-xl font-normal text-lg text-justify bg-opacity-95 bg-scheme-dark text-scheme-pale">{ note.note }</div>
+                    <div className="flex flex-col w-full px-8 py-5 pt-12 mb-10 rounded-xl font-normal text-lg text-justify shadow-xl border border-gray-400 text-[#222]">{ note.note }</div>
                   </div>
                 </div>
               </div>
