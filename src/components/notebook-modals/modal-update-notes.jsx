@@ -1,44 +1,51 @@
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function MyModal() {
+export default function MyModal({ getnote }) {
+
   const defaultValues = {
-    image: '',
-    title: '',
-    slug: '',
-    note: '',
+    image: getnote.image,
+    title: getnote.title,
+    slug: getnote.slug,
+    note: getnote.note,
     date: new Date(),
-    tag: ''
+    tag: getnote.tag
   }
+
   const { register, handleSubmit, reset, formState: { errors, isSubmitting }} = useForm({ defaultValues })
   const router = useRouter()
 
   function refreshData() {
-    router.replace(router.asPath)
+    router.replace('/notebook')
   }
 
-  async function createContact(formData) {
-    const response = await fetch('/api/notebook/create-notebook', {
-      method: 'POST',
+  //Update contact function code here...
+  async function updateContact(formData) {
+    const getID = getnote.id
+    const response = await fetch(`/api/notebook/update-notebook/${getID}`, {
+      method: 'PUT',
       body: JSON.stringify(formData)
     })
-    console.log(formData)
-    reset()
     refreshData()
+    pushRouter()
+    reset()
     closeModal()
     return await response.json()
   }
 
+  // Modal function code
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)
+    reset(defaultValues)
   }
 
   function openModal() {
     setIsOpen(true)
+    reset(defaultValues)
   }
 
   return (
@@ -49,14 +56,14 @@ export default function MyModal() {
           onClick={openModal}
           className="px-4 py-2 text-sm font-medium text-white bg-scheme-dark rounded-md hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
         >
-          Take A Note
+          Edit
         </button>
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 z-50 overflow-y-auto"
+          className="fixed inset-0 z-10 overflow-y-auto"
           onClose={closeModal}
         >
           <div className="min-h-screen px-4 text-center">
@@ -94,7 +101,7 @@ export default function MyModal() {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Take a new note...
+                    Edit this note
                   </Dialog.Title>
                   <button
                     type="button"
@@ -104,7 +111,7 @@ export default function MyModal() {
                     Cancel
                   </button>
                 </div>
-                <form onSubmit={handleSubmit(createContact)} className="flex flex-col w-full mt-5 space-y-2">
+                <form onSubmit={handleSubmit(updateContact)} className="flex flex-col w-full mt-5 space-y-2">
                   <div className="flex flex-row w-full space-x-2">
                     <div className="flex flex-col w-full space-y-2">
                       <div className="form-control">
@@ -130,13 +137,13 @@ export default function MyModal() {
                         <input type="text" name="tag" {...register("tag", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Tag" disabled={ isSubmitting } />
                         { errors.tag && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Tag is required!</span> }
                       </div>
+                      <div className="flex flex-row justify-end w-full">
+                        <button type="submit" className="w-full max-w-[10rem] bg-scheme-dark text-white text-base text-center px-5 py-3 rounded-lg hover:bg-opacity-90 focus:outline-none">
+                          Update
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-row justify-end w-full">
-                    <button type="submit" className="w-full max-w-[8rem] bg-scheme-dark text-white text-base text-center px-5 py-3 rounded-lg hover:bg-opacity-90 focus:outline-none">
-                      Post
-                    </button>
-                  </div>
+                  </div>                  
                 </form>
               </div>
             </Transition.Child>

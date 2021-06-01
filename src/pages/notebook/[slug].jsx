@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
+import DeleteNotesModal from '~/components/notebook-modals/modal-delete-notes'
+import UpdateNotesModal from '~/components/notebook-modals/modal-update-notes'
 import { useRouter } from 'next/router'
 import { PrismaClient } from '@prisma/client'
 
@@ -27,6 +29,10 @@ export default function NotebookSlug({ note, countAllNotes, countAllContacts }) 
                 </svg>
                 </button>
                 <span className="font-bold text-xl text-scheme-dark">{ note.title }</span>
+              </div>
+              <div className="flex flex-row items-center space-x-1">
+                <UpdateNotesModal getnote={ note } />
+                <DeleteNotesModal getnote={ note } />
               </div>
             </div>
           </div>
