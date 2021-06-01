@@ -43,7 +43,7 @@ export default function Phonebook({data, countAllContacts}) {
           </div>
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">
-              <span className="font-bold text-xl text-scheme-dark">Contact List</span>
+              <span className="font-bold text-xl text-scheme-dark">Phonebook</span>
               <SearchFunction contacts={data} />
               <CreateContactModal />
             </div>
