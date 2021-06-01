@@ -12,7 +12,7 @@ export default function DeleteContact({ getcontact }) {
   }
 
   async function deleteContact() {
-    const response = await fetch(`/api/delete-contact/${getcontact.id}`, {
+    const response = await fetch(`/api/phonebook/delete-contact/${getcontact.id}`, {
       method: 'DELETE',
     })
     reset()

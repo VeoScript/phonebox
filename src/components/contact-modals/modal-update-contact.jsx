@@ -35,7 +35,7 @@ export default function MyModal({ getcontact }) {
   //Update contact function code here...
   async function updateContact(formData) {
     const getID = getcontact.id
-    const response = await fetch(`/api/update-contact/${getID}`, {
+    const response = await fetch(`/api/phonebook/update-contact/${getID}`, {
       method: 'PUT',
       body: JSON.stringify(formData)
     })

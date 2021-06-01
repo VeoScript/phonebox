@@ -12,7 +12,7 @@ export default function MyModal() {
   }
 
   async function createContact(formData) {
-    const response = await fetch('/api/create-contact', {
+    const response = await fetch('/api/phonebook/create-contact', {
       method: 'POST',
       body: JSON.stringify(formData)
     })
