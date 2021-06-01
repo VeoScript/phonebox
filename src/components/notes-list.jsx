@@ -6,7 +6,7 @@ export default function Notelist({ notes }) {
     <>
       {notes.map(note => {
         return (
-          <Link href={`/notebook/${ note.slug }`}>
+          <Link href={`/notebook/${ note.slug }`} key={ note.id }>
             <a className="flex flex-col w-full py-5">
               <div className="flex flex-col h-[25rem] bg-scheme-pale text-[#333] rounded-xl transition ease-in-out duration-300 transform hover:scale-95">
                 <div className="relative">
@@ -21,10 +21,10 @@ export default function Notelist({ notes }) {
                     <div className="flex flex-col w-full space-y-2 px-3">
                       <div className="flex flex-col w-full">
                         <span className="font-bold text-xl">{ note.title }</span>
-                        <span className="font-light text-sm"><Moment date={ note.date } format='LLLL' /></span>
+                        <span className="font-light text-xs"><Moment date={ note.date } format='LLLL' /></span>
                       </div>
                       <span className="font-normal text-sm line-clamp-3">{ note.note }</span>
-                      <div className="w-full max-w-xs pt-5">
+                      <div className="w-full max-w-xs pt-2">
                         <span className="font-normal text-xs bg-scheme-sky text-scheme-mid px-2 py-1 rounded-full">{ note.tag }</span>
                       </div>
                     </div>
