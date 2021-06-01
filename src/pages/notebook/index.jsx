@@ -3,6 +3,7 @@ import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
 import Noteslist from '~/components/notes-list'
 import CreateNotesModal from '~/components/notebook-modals/modal-create-notes'
+import SearchNotesFunction from '~/components/search-function/search-notes'
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
@@ -50,6 +51,7 @@ export default function Notebook({ getNotes, countAllNotes, countAllContacts }) 
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">
               <span className="font-bold text-xl text-scheme-dark">Notebook</span>
+              <SearchNotesFunction notes={getNotes} />
               <CreateNotesModal />
             </div>
             <div className="grid grid-cols-2 gap-4 w-full overflow-y-auto p-10">
