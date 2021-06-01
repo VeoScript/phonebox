@@ -35,5 +35,6 @@ model Notes {
   title String?
   slug String?
   note String?
+  date String?
   tag String?
 }
