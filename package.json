@@ -10,6 +10,7 @@
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@prisma/client": "2.22.1",
+    "moment": "^2.29.1",
     "next": "10.2.0",
     "next-themes": "^0.0.14",
     "nextjs-progressbar": "^0.0.9",
