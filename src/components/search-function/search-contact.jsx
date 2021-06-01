@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-export default function SearchFunction({contacts}) {
+export default function SearchContact({contacts}) {
   const [searchTerm, setSearchTerm] = useState("")
   const [isOpen, setIsOpen] = useState(false)
 

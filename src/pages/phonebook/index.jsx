@@ -3,7 +3,7 @@ import Layout from '~/layouts/default'
 import Sidebar from '~/components/sidebar'
 import ContactList from '~/components/contact-list'
 import CreateContactModal from '~/components/contact-modals/modal-create-contact'
-import SearchFunction from '~/components/search-function'
+import SearchContactFunction from '~/components/search-function/search-contact'
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
@@ -51,7 +51,7 @@ export default function Phonebook({data, countAllNotes, countAllContacts}) {
           <div className="flex flex-col w-full max-w-full h-auto">
             <div className="flex flex-row items-center justify-between w-full border-b border-scheme-mid px-3 py-5">
               <span className="font-bold text-xl text-scheme-dark">Phonebook</span>
-              <SearchFunction contacts={data} />
+              <SearchContactFunction contacts={data} />
               <CreateContactModal />
             </div>
             <div className="flex flex-col w-full overflow-y-auto">
