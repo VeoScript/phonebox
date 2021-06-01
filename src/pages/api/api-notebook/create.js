@@ -4,6 +4,6 @@ const prisma = new PrismaClient()
 
 export default async(req, res) => {
   const data = JSON.parse(req.body)
-  const createdContact = await prisma.notes.create({data})
-  res.json(createdContact)
+  const createdNotes = await prisma.notes.create({data})
+  res.json(createdNotes)
 }
