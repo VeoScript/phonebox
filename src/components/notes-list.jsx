@@ -9,7 +9,7 @@ export default function Notelist({ notes }) {
         return (
           <Link href={`/notebook/${ note.slug }`} key={ note.id }>
             <a className="flex flex-col w-full py-5">
-              <div className="flex flex-col h-[26rem] bg-scheme-pale text-[#333] rounded-xl transition ease-in-out duration-300 transform hover:scale-95">
+              <div className="flex flex-col h-[25rem] bg-scheme-pale text-[#333] rounded-xl transition ease-in-out duration-300 transform hover:scale-95">
                 <div className="relative">
                   <div className="absolute w-full inset-0 -top-5 z-30">
                     <div className="flex flex-row justify-center w-full">
@@ -25,7 +25,7 @@ export default function Notelist({ notes }) {
                         <span className="font-light text-xs"><Moment date={ note.date } format='LLLL' /></span>
                       </div>
                       <div className="flex flex-col w-full space-y-3">
-                        <span className="font-normal text-sm line-clamp-3">
+                        <span className="font-normal text-sm line-clamp-2">
                           <ReactMarkdown>{ note.note }</ReactMarkdown>  
                         </span>
                         <span className="font-normal text-xs text-[#25C5F3]">Click to read more...</span>
