@@ -4,10 +4,10 @@ import NextNProgress from '~/lib/nprogress'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class">
+    <>
       <NextNProgress />
       <Component {...pageProps} />
-    </ThemeProvider>
+    </>
   )
 }
 
