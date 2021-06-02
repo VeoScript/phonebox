@@ -1,7 +1,10 @@
-import { useForm } from 'react-hook-form'
+import ReactMde from 'react-mde'
+import Markdown from 'react-markdown'
+import { useForm, Controller } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import 'react-mde/lib/styles/css/react-mde-all.css'
 
 export default function MyModal() {
   const defaultValues = {
@@ -12,7 +15,9 @@ export default function MyModal() {
     date: new Date(),
     tag: ''
   }
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting }} = useForm({ defaultValues })
+  const { register, handleSubmit, reset, control, formState: { errors, isSubmitting }} = useForm({ defaultValues })
+  //For RichText selectedTab useState
+  const [selectedTab, setSelectedTab] = useState('write')
   const router = useRouter()
 
   function refreshData() {
@@ -24,7 +29,6 @@ export default function MyModal() {
       method: 'POST',
       body: JSON.stringify(formData)
     })
-    console.log(formData)
     reset()
     refreshData()
     closeModal()
@@ -119,9 +123,22 @@ export default function MyModal() {
                         <input type="text" name="slug" {...register("slug", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Slug" disabled={ isSubmitting } />
                         { errors.slug && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Slug is required!</span> }
                       </div>
-                      <div className="form-control">
-                        <textarea type="text" name="note" {...register("note", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" rows="5" placeholder="Take a note..." disabled={ isSubmitting } />
-                        { errors.note && <span className="font-medium text-xs tracking-wide text-red-500 mx-1">Note is required!</span> }
+                      <div className="flex flex-row form-control w-full bg-white text-[#333]">
+                        <Controller 
+                          control={control}
+                          name="note"
+                          render={({field}) => (
+                            <ReactMde 
+                              {...field}
+                              selectedTab={selectedTab}
+                              onTabChange={setSelectedTab}
+                              generateMarkdownPreview={markdown => 
+                                Promise.resolve(<Markdown children={markdown} />)
+                              }
+                            />
+                          )}
+                        />
+                        { errors.note && <span className="text-xs text-red-500 font-medium pt-0.5">{ errors.note.message }</span> }
                       </div>
                       <div className="form-control hidden">
                         <input type="text" name="date" {...register("date", { required: true })} className="bg-gray-100 text-[#333] text-base px-5 py-3 w-full rounded-lg focus:outline-none disabled:cursor-not-allowed disabled:opacity-50" placeholder="Date" disabled={ isSubmitting } />

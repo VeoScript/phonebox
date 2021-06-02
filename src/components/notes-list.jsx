@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Moment from 'react-moment'
+import ReactMarkdown from 'react-markdown'
 
 export default function Notelist({ notes }) {
   return (
@@ -24,7 +25,9 @@ export default function Notelist({ notes }) {
                         <span className="font-light text-xs"><Moment date={ note.date } format='LLLL' /></span>
                       </div>
                       <div className="flex flex-col w-full space-y-3">
-                        <span className="font-normal text-sm line-clamp-3">{ note.note }</span>
+                        <span className="font-normal text-sm line-clamp-3">
+                          <ReactMarkdown>{ note.note }</ReactMarkdown>  
+                        </span>
                         <span className="font-normal text-xs text-[#25C5F3]">Click to read more...</span>
                       </div>
                       <div className="w-full max-w-xs pt-2">
