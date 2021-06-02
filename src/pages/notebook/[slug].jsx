@@ -56,7 +56,7 @@ export default function NotebookSlug({ note, countAllNotes, countAllContacts }) 
               <div className="relative">
                 <div className="absolute w-full inset-0 top-[21rem] px-5">
                   <div className="flex flex-col w-full">
-                    <div className="flex flex-col w-full px-8 py-5 pt-12 mb-10 rounded-xl font-normal text-lg text-justify shadow-xl border border-gray-400 text-[#222]">{ note.note }</div>
+                    <div className="flex flex-col w-full px-8 py-5 pt-12 mb-10 rounded-xl font-normal text-lg text-justify shadow-xl border border-gray-400 bg-gray-200 text-[#222]">{ note.note }</div>
                   </div>
                 </div>
               </div>
