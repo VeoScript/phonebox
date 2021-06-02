@@ -26,7 +26,7 @@ export default function Notelist({ notes }) {
                       </div>
                       <div className="flex flex-col w-full space-y-3">
                         <span className="font-normal text-sm line-clamp-2">
-                          <ReactMarkdown>{ note.note }</ReactMarkdown>  
+                          <ReactMarkdown>{!note.note ? 'No article available' : note.note}</ReactMarkdown>  
                         </span>
                         <span className="font-normal text-xs text-[#25C5F3]">Click to read more...</span>
                       </div>

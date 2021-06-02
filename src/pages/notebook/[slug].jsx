@@ -58,7 +58,7 @@ export default function NotebookSlug({ note, countAllNotes, countAllContacts }) 
                 <div className="absolute w-full inset-0 top-[21rem] px-5">
                   <div className="flex flex-col w-full">
                     <article className="flex flex-col w-full max-w-full px-8 py-5 pt-16 mb-10 prose rounded-xl shadow-xl border border-gray-400 bg-gray-200">
-                      <ReactMarkdown>{ note.note }</ReactMarkdown>
+                      <ReactMarkdown>{!note.note ? 'No article available' : note.note}</ReactMarkdown>
                     </article>
                   </div>
                 </div>
