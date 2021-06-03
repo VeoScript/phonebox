@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function MyModal({ getcontact }) {
+export default function UpdateContactModal({ getcontact }) {
   
   // const [contact, setNewContact] = useState('getcontact')
 

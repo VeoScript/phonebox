@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function DeleteContact({ getnote }) {
+export default function DeleteNotesModal({ getnote }) {
   const { handleSubmit, reset } = useForm()
   const router = useRouter()
 
