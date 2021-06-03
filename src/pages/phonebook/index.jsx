@@ -38,6 +38,13 @@ export async function getServerSideProps(){
 }
 
 export default function Phonebook({data, countAllNotes, countAllContacts}) {
+
+  const check = data.map((id) => {
+    return {
+      id
+    }
+  })
+
   return (
     <>
       <Head>
@@ -53,6 +60,9 @@ export default function Phonebook({data, countAllNotes, countAllContacts}) {
               <span className="font-bold text-xl text-scheme-dark">Phonebook</span>
               <SearchContactFunction contacts={data} />
               <CreateContactModal />
+            </div>
+            <div className={check[0] ? 'hidden' : 'flex flex-row items-center justify-center w-full h-full'}>
+              <span className="font-bold text-5xl text-scheme-light">No contacts available...</span>
             </div>
             <div className="flex flex-col w-full overflow-y-auto">
               <ContactList contacts={data} />
