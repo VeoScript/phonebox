@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function MyModal() {
+export default function CreateContactModal() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting }} = useForm()
   const router = useRouter()
 

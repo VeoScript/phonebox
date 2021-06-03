@@ -6,7 +6,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import 'react-mde/lib/styles/css/react-mde-all.css'
 
-export default function MyModal({ getnote }) {
+export default function UpdateNotesModal({ getnote }) {
 
   const defaultValues = {
     image: getnote.image,
