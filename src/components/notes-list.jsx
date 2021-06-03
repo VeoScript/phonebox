@@ -9,7 +9,7 @@ export default function Notelist({ notes }) {
         return (
           <Link href={`/notebook/${ note.slug }`} key={ note.id }>
             <a className="flex flex-col w-full py-5">
-              <div className="flex flex-col h-[25rem] bg-scheme-pale text-[#333] rounded-xl transition ease-in-out duration-300 transform hover:scale-95">
+              <div className="flex flex-col h-[25rem] bg-scheme-pale text-[#333] rounded-xl transition ease-in-out duration-300 transform hover:scale-95 hover:shadow-2xl">
                 <div className="relative">
                   <div className="absolute w-full inset-0 -top-5 z-30">
                     <div className="flex flex-row justify-center w-full">
