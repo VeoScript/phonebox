@@ -38,6 +38,13 @@ export async function getServerSideProps(){
 }
 
 export default function Notebook({ getNotes, countAllNotes, countAllContacts }) {
+
+  const check = getNotes.map((id) => {
+    return {
+      id
+    }
+  })
+
   return (
     <>
       <Head>
@@ -53,6 +60,9 @@ export default function Notebook({ getNotes, countAllNotes, countAllContacts }) 
               <span className="font-bold text-xl text-scheme-dark">Notebook</span>
               <SearchNotesFunction notes={getNotes} />
               <CreateNotesModal />
+            </div>
+            <div className={check[0] ? 'hidden' : 'flex flex-row items-center justify-center w-full h-full mt-16'}>
+              <span className="font-bold text-5xl text-scheme-light">Add some notes here...</span>
             </div>
             <div className="grid grid-cols-2 gap-4 w-full overflow-y-auto p-10">
               <Noteslist notes={getNotes} />
