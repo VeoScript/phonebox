@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Contact" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "name" TEXT,
     "description" TEXT,
     "phone" TEXT NOT NULL,
@@ -15,7 +15,22 @@ CREATE TABLE "Contact" (
     "twitter" TEXT,
     "instagram" TEXT,
     "tiktok" TEXT,
-    "youtube" TEXT
+    "youtube" TEXT,
+
+    PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Notes" (
+    "id" SERIAL NOT NULL,
+    "image" TEXT,
+    "title" TEXT,
+    "slug" TEXT,
+    "note" TEXT,
+    "date" TEXT,
+    "tag" TEXT,
+
+    PRIMARY KEY ("id")
 );
 
 -- CreateIndex
